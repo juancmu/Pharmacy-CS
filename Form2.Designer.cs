@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblMedicamentData = new System.Windows.Forms.Label();
+            this.lblAdress = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lblRequestSent = new System.Windows.Forms.Label();
@@ -46,23 +46,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "VERIFIQUE SU PEDIDO\r\n\r\nSI ES CORRECTO, DARLE CLIC EN ENVIAR";
             // 
-            // label2
+            // lblMedicamentData
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.lblMedicamentData.AutoSize = true;
+            this.lblMedicamentData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedicamentData.Location = new System.Drawing.Point(70, 141);
+            this.lblMedicamentData.Name = "lblMedicamentData";
+            this.lblMedicamentData.Size = new System.Drawing.Size(0, 20);
+            this.lblMedicamentData.TabIndex = 1;
             // 
-            // label3
+            // lblAdress
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(70, 202);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.lblAdress.AutoSize = true;
+            this.lblAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdress.Location = new System.Drawing.Point(70, 202);
+            this.lblAdress.Name = "lblAdress";
+            this.lblAdress.Size = new System.Drawing.Size(0, 20);
+            this.lblAdress.TabIndex = 2;
             // 
             // button1
             // 
@@ -106,8 +106,8 @@
             this.Controls.Add(this.lblRequestSent);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblAdress);
+            this.Controls.Add(this.lblMedicamentData);
             this.Controls.Add(this.label1);
             this.Name = "Confirm_Form";
             this.Text = "confirmacion";
@@ -119,8 +119,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMedicamentData;
+        private System.Windows.Forms.Label lblAdress;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblRequestSent;

@@ -1,4 +1,6 @@
-﻿namespace Act2Pharmacy
+﻿using System.Windows.Forms;
+
+namespace Act2Pharmacy
 {
     partial class MainForm
     {
@@ -31,7 +33,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.txtNameMedicament = new System.Windows.Forms.TextBox();
-            this.cmbBoxNameMedicament = new System.Windows.Forms.ComboBox();
+            this.cmbBoxTypeMedicament = new System.Windows.Forms.ComboBox();
             this.txtQtyMedicament = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,9 +51,9 @@
             this.error1 = new System.Windows.Forms.Label();
             this.error2 = new System.Windows.Forms.Label();
             this.error3 = new System.Windows.Forms.Label();
-            this.error4 = new System.Windows.Forms.Label();
             this.error5 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error4 = new System.Windows.Forms.Label();
             this.groupBoxVendor.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -63,21 +65,25 @@
             this.txtNameMedicament.Name = "txtNameMedicament";
             this.txtNameMedicament.Size = new System.Drawing.Size(279, 20);
             this.txtNameMedicament.TabIndex = 0;
+            this.txtNameMedicament.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameMedicament_KeyPress);
+            this.txtNameMedicament.Leave += new System.EventHandler(this.txtNameMedicament_Leave);
             // 
-            // cmbBoxNameMedicament
+            // cmbBoxTypeMedicament
             // 
-            this.cmbBoxNameMedicament.FormattingEnabled = true;
-            this.cmbBoxNameMedicament.Items.AddRange(new object[] {
+            this.cmbBoxTypeMedicament.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxTypeMedicament.FormattingEnabled = true;
+            this.cmbBoxTypeMedicament.Items.AddRange(new object[] {
             "ANALGESICO",
             "ANALEPTICO",
             "ANESTESICO",
             "ANTIACIDO",
             "ANTIDEPRESIVO",
             "ANTIBIOTICO"});
-            this.cmbBoxNameMedicament.Location = new System.Drawing.Point(185, 140);
-            this.cmbBoxNameMedicament.Name = "cmbBoxNameMedicament";
-            this.cmbBoxNameMedicament.Size = new System.Drawing.Size(205, 21);
-            this.cmbBoxNameMedicament.TabIndex = 1;
+            this.cmbBoxTypeMedicament.Location = new System.Drawing.Point(185, 140);
+            this.cmbBoxTypeMedicament.Name = "cmbBoxTypeMedicament";
+            this.cmbBoxTypeMedicament.Size = new System.Drawing.Size(205, 21);
+            this.cmbBoxTypeMedicament.TabIndex = 1;
+            this.cmbBoxTypeMedicament.SelectedIndexChanged += new System.EventHandler(this.cmbBoxTypeMedicament_SelectedIndexChanged);
             // 
             // txtQtyMedicament
             // 
@@ -85,6 +91,7 @@
             this.txtQtyMedicament.Name = "txtQtyMedicament";
             this.txtQtyMedicament.Size = new System.Drawing.Size(107, 20);
             this.txtQtyMedicament.TabIndex = 2;
+            this.txtQtyMedicament.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtyMedicament_KeyPress);
             // 
             // label1
             // 
@@ -136,6 +143,7 @@
             this.rBtnCofarma.TabStop = true;
             this.rBtnCofarma.Text = "COFARMA";
             this.rBtnCofarma.UseVisualStyleBackColor = true;
+            this.rBtnCofarma.Enter += new System.EventHandler(this.rBtnCofarma_Enter);
             // 
             // rBtnEmpsephar
             // 
@@ -147,6 +155,7 @@
             this.rBtnEmpsephar.TabStop = true;
             this.rBtnEmpsephar.Text = "EMPSEPHAR";
             this.rBtnEmpsephar.UseVisualStyleBackColor = true;
+            this.rBtnEmpsephar.Enter += new System.EventHandler(this.rBtnEmpsephar_Enter);
             // 
             // rBtnCemefar
             // 
@@ -158,6 +167,7 @@
             this.rBtnCemefar.TabStop = true;
             this.rBtnCemefar.Text = "CEMEFAR";
             this.rBtnCemefar.UseVisualStyleBackColor = true;
+            this.rBtnCemefar.Enter += new System.EventHandler(this.rBtnCemefar_Enter);
             // 
             // groupBoxVendor
             // 
@@ -193,6 +203,7 @@
             this.chkBoxSecondVendor.TabIndex = 1;
             this.chkBoxSecondVendor.Text = "SECUNDARIA";
             this.chkBoxSecondVendor.UseVisualStyleBackColor = true;
+            this.chkBoxSecondVendor.Enter += new System.EventHandler(this.chkBoxSecondVendor_Enter);
             // 
             // chkBoxMainVendor
             // 
@@ -203,6 +214,7 @@
             this.chkBoxMainVendor.TabIndex = 0;
             this.chkBoxMainVendor.Text = "PRINCIPAL";
             this.chkBoxMainVendor.UseVisualStyleBackColor = true;
+            this.chkBoxMainVendor.Enter += new System.EventHandler(this.chkBoxMainVendor_Enter);
             // 
             // btnErase
             // 
@@ -228,42 +240,52 @@
             // 
             // error1
             // 
-            this.error1.Location = new System.Drawing.Point(508, 80);
+            this.error1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error1.ForeColor = System.Drawing.Color.Red;
+            this.error1.Location = new System.Drawing.Point(485, 64);
             this.error1.Name = "error1";
-            this.error1.Size = new System.Drawing.Size(253, 28);
+            this.error1.Size = new System.Drawing.Size(280, 56);
             this.error1.TabIndex = 15;
             // 
             // error2
             // 
-            this.error2.Location = new System.Drawing.Point(508, 140);
+            this.error2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error2.ForeColor = System.Drawing.Color.Red;
+            this.error2.Location = new System.Drawing.Point(420, 140);
             this.error2.Name = "error2";
-            this.error2.Size = new System.Drawing.Size(253, 28);
+            this.error2.Size = new System.Drawing.Size(350, 28);
             this.error2.TabIndex = 16;
             // 
             // error3
             // 
+            this.error3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error3.ForeColor = System.Drawing.Color.Red;
             this.error3.Location = new System.Drawing.Point(314, 198);
             this.error3.Name = "error3";
             this.error3.Size = new System.Drawing.Size(451, 28);
             this.error3.TabIndex = 17;
             // 
-            // error4
-            // 
-            this.error4.Location = new System.Drawing.Point(535, 264);
-            this.error4.Name = "error4";
-            this.error4.Size = new System.Drawing.Size(253, 28);
-            this.error4.TabIndex = 18;
-            // 
             // error5
             // 
-            this.error5.Location = new System.Drawing.Point(535, 334);
+            this.error5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error5.ForeColor = System.Drawing.Color.Red;
+            this.error5.Location = new System.Drawing.Point(535, 329);
             this.error5.Name = "error5";
-            this.error5.Size = new System.Drawing.Size(253, 28);
+            this.error5.Size = new System.Drawing.Size(253, 41);
             this.error5.TabIndex = 19;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // error4
+            // 
+            this.error4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error4.ForeColor = System.Drawing.Color.Red;
+            this.error4.Location = new System.Drawing.Point(535, 251);
+            this.error4.Name = "error4";
+            this.error4.Size = new System.Drawing.Size(253, 56);
+            this.error4.TabIndex = 18;
             // 
             // MainForm
             // 
@@ -285,7 +307,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtQtyMedicament);
-            this.Controls.Add(this.cmbBoxNameMedicament);
+            this.Controls.Add(this.cmbBoxTypeMedicament);
             this.Controls.Add(this.txtNameMedicament);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -307,7 +329,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtNameMedicament;
-        private System.Windows.Forms.ComboBox cmbBoxNameMedicament;
+        private System.Windows.Forms.ComboBox cmbBoxTypeMedicament;
         private System.Windows.Forms.TextBox txtQtyMedicament;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -325,9 +347,9 @@
         private System.Windows.Forms.Label error1;
         private System.Windows.Forms.Label error2;
         private System.Windows.Forms.Label error3;
-        private System.Windows.Forms.Label error4;
         private System.Windows.Forms.Label error5;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label error4;
     }
 }
 

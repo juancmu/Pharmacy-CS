@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
+            this.lblErrorMesasage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -42,21 +43,33 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lblErrorMesasage
+            // 
+            this.lblErrorMesasage.AutoSize = true;
+            this.lblErrorMesasage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMesasage.Location = new System.Drawing.Point(94, 37);
+            this.lblErrorMesasage.Name = "lblErrorMesasage";
+            this.lblErrorMesasage.Size = new System.Drawing.Size(0, 25);
+            this.lblErrorMesasage.TabIndex = 1;
+            // 
             // MessageValidation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(530, 270);
+            this.Controls.Add(this.lblErrorMesasage);
             this.Controls.Add(this.button1);
             this.Name = "MessageValidation";
             this.Text = "Hay Inconsistencias en su pedido, revisar:";
             this.Load += new System.EventHandler(this.messageValidation_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblErrorMesasage;
     }
 }
