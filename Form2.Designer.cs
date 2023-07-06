@@ -42,7 +42,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(74, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(454, 75);
+            this.label1.Size = new System.Drawing.Size(375, 60);
             this.label1.TabIndex = 0;
             this.label1.Text = "VERIFIQUE SU PEDIDO\r\n\r\nSI ES CORRECTO, DARLE CLIC EN ENVIAR";
             // 
@@ -52,7 +52,7 @@
             this.lblMedicamentData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedicamentData.Location = new System.Drawing.Point(70, 141);
             this.lblMedicamentData.Name = "lblMedicamentData";
-            this.lblMedicamentData.Size = new System.Drawing.Size(0, 20);
+            this.lblMedicamentData.Size = new System.Drawing.Size(0, 17);
             this.lblMedicamentData.TabIndex = 1;
             // 
             // lblAdress
@@ -61,7 +61,7 @@
             this.lblAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdress.Location = new System.Drawing.Point(70, 202);
             this.lblAdress.Name = "lblAdress";
-            this.lblAdress.Size = new System.Drawing.Size(0, 20);
+            this.lblAdress.Size = new System.Drawing.Size(0, 17);
             this.lblAdress.TabIndex = 2;
             // 
             // button1
@@ -91,10 +91,10 @@
             // 
             this.lblRequestSent.AutoSize = true;
             this.lblRequestSent.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRequestSent.ForeColor = System.Drawing.Color.Lime;
+            this.lblRequestSent.ForeColor = System.Drawing.Color.Blue;
             this.lblRequestSent.Location = new System.Drawing.Point(225, 350);
             this.lblRequestSent.Name = "lblRequestSent";
-            this.lblRequestSent.Size = new System.Drawing.Size(0, 29);
+            this.lblRequestSent.Size = new System.Drawing.Size(0, 24);
             this.lblRequestSent.TabIndex = 5;
             this.lblRequestSent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -102,6 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(589, 391);
             this.Controls.Add(this.lblRequestSent);
             this.Controls.Add(this.button2);
